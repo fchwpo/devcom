@@ -5,6 +5,8 @@ const mongoose = require('mongoose');
 const User = require('../models/User');
 const key = require('../config/keys').secretKey;
 
+// Below passport jwt auth is nothing to learn you can 
+// learn or see how to implement it in github
 const opts = {};
 opts.jwtFromRequest = ExtractJWT.fromAuthHeaderAsBearerToken();
 opts.secretOrKey = key;

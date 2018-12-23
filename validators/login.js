@@ -1,10 +1,10 @@
-const Validator = require('validator');
-const isEmpty = require('./isEmpty');
+const Validator = require("validator");
+const isEmpty = require("./isEmpty");
 
-const validate = (user) => {
+const validate = user => {
   let errors = {};
-  user.email = !isEmpty(user.email) ? user.email : '';
-  user.password = !isEmpty(user.password) ? user.password : '';
+  user.email = !isEmpty(user.email) ? user.email : "";
+  user.password = !isEmpty(user.password) ? user.password : "";
   // Val for email
   if (Validator.isEmpty(user.email)) {
     errors.email = "Email field is Mandatory";
@@ -19,6 +19,6 @@ const validate = (user) => {
   return {
     errors,
     isValid: isEmpty(errors)
-  }
-}
+  };
+};
 module.exports = validate;

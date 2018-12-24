@@ -29,14 +29,14 @@ mongoose
 // Passport middleware
 app.use(passport.initialize());
 //Passport Config
-require('./config/passport')(passport);
+require("./config/passport")(passport);
 
 // Use routes
 app.use("/api/users", users);
 app.use("/api/profile", profile);
 app.use("/api/post", posts);
 
-const port = process.env.port || 3000;
+const port = process.env.port || 5000;
 app.listen(port, () => {
   console.log(`Listening on port number ${port}`);
 });

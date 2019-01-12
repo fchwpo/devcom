@@ -9,6 +9,15 @@ const posts = require("./routes/api/posts");
 
 const app = express();
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
+
 // Body Pareser Config
 app.use(body_parser.urlencoded({ extended: false }));
 app.use(body_parser.json());
